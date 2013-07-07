@@ -26,6 +26,16 @@ sudo apt-add-repository -y ppa:cassou/emacs
 sudo apt-get update
 sudo apt-get install -y emacs24 emacs24-el emacs24-common-non-dfsg
 
+#install and configure heroku
+cd $HOME
+wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh
+heroku login 
+ssh-keygen -t rsa
+heroku keys:add
+
+#install bitstarter
+git clone https://github.com/nmoroze/bitstarter.git
+
 # git pull and install dotfiles as well
 cd $HOME
 if [ -d ./dotfiles/ ]; then
